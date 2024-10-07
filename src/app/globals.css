@@ -4,12 +4,12 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #193549;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #193549;
     --foreground: #ededed;
   }
 }
@@ -17,11 +17,57 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+* {
+  font-family: var(--font-montserrat);
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.thin-text {
+  font-weight: 200;
+  opacity: 0.8;
+}
+
+/* Custom scrollbar for WebKit browsers */
+.scrolable {
+  overflow-y: auto;
+  margin-top: 5vh;
+  max-height: 75vh;
+}
+
+.scrolable::-webkit-scrollbar {
+  width: 1px;
+  /* Scrollbar width */
+}
+
+.scrolable::-webkit-scrollbar-track {
+  background: transparent;
+  /* No color for the track */
+}
+
+.scrolable::-webkit-scrollbar-thumb {
+  background-color: #88888810;
+  /* Color for the scrollbar handle */
+  border-radius: 10px;
+  /* Rounded scrollbar handle */
+}
+
+.scrolable::-webkit-scrollbar-thumb:hover {
+  background-color: #55555510;
+  /* Darker color when hovering */
+}
+
+/* Custom scrollbar for Firefox */
+.scrolable {
+  scrollbar-width: thin;
+  /* Thin scrollbar width */
+  scrollbar-color: #88888828 transparent;
+  /* Handle color and transparent track */
 }
